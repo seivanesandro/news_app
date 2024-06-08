@@ -78,7 +78,7 @@ const Main = ({search}) => {
     const setImage = event => {
         event.target.src = img;
     };
-
+    
     return (
         <>
             <div className="news">
