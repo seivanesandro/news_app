@@ -127,7 +127,7 @@ const Main = ({search}) => {
                                     />
                                     <p
                                         style={{
-                                            fontSize: 14
+                                            fontSize: 13
                                         }}
                                         className="news-text"
                                     >
@@ -135,11 +135,9 @@ const Main = ({search}) => {
                                             item.description
                                         }
                                     </p>
-                                </div>
-                                <div className="card-footer">
                                     <button className="btn btn-success">
                                         <a
-                                        target='_blanck'
+                                            target="_blanck"
                                             href={
                                                 item.url
                                             }
