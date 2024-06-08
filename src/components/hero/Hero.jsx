@@ -5,9 +5,6 @@ import styled, {
     keyframes
 } from 'styled-components';
 import { devices } from '../../utils/constantes';
-
-
-
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -90,7 +87,6 @@ const HeroTextStyled = styled.p`
         letter-spacing: 0.2rem;
     }
 `;
-
 
 const Hero = ({ setSearch }) => {
     const [name, setName] = useState('');
