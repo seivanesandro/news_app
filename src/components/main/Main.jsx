@@ -9,7 +9,6 @@ import styled, {
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import moment from 'moment';
-import Loading from '../load/Loading';
 
 const Show = keyframes`
     0%{
@@ -40,13 +39,6 @@ const TitleNews = styled.div`
     text-align: center;
     text-transform: capitalize;
     color: #333;
-`;
-
-const ContainerLoading = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 4rem;
 `;
 
 const apiKey = process.env.REACT_APP_API_KEY;
@@ -81,13 +73,7 @@ const Main = ({ search }) => {
                 <h3>results: '{search}...'</h3>
             </TitleNews>
             <ContainerNews className="container-news">
-                {!news && news.length === 0 && (
-                    <ContainerLoading className="container-loading">
-                        <Loading
-                            speedborder={1}
-                        />
-                    </ContainerLoading>
-                )}
+
                 {news.map((item, index) => (
                         <Card
                             style={{
