@@ -81,7 +81,7 @@ const Main = ({ search }) => {
                 <h3>results: '{search}...'</h3>
             </TitleNews>
             <ContainerNews className="container-news">
-                {news.length === 0 && (
+                {!news && news.length === 0 && (
                     <ContainerLoading className="container-loading">
                         <Loading
                             speedborder={1}
