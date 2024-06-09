@@ -88,8 +88,7 @@ const Main = ({ search }) => {
                         />
                     </ContainerLoading>
                 )}
-                {news.length > 0 &&
-                    news.map((item, index) => (
+                {news.map((item, index) => (
                         <Card
                             style={{
                                 width: '18rem'
