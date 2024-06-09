@@ -42,8 +42,7 @@ const TitleNews = styled.div`
 `;
 
 const apiKey = process.env.REACT_APP_API_KEY;
-const apiUrl =
-    process.env.REACT_APP_API_URL_SEARCH;
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const Main = ({ search }) => {
     const [news, setNews] = useState([]);
@@ -53,16 +52,13 @@ const Main = ({ search }) => {
     }, [search]);
 
     const getNews = async search => {
-        const api = await fetch(
-            `${apiUrl}?q=${search}&language=pt&sortBy=publishedAt&apiKey=${apiKey}`
-        );
+        const api = await fetch( `${apiUrl}?api_token=${apiKey}&language=pt&search=${search}&locale=pt,us,uk,&sort=published_at&categories=general,science,sports,business,health,entertainment,tech,politics,food,travel`);
         const data = await api.json();
 
-        setNews(data.articles);
+        setNews(data.data);
     };
 
-    const img =
-        'https://c0.wallpaperflare.com/preview/105/94/569/administration-articles-bank-black-and-white.jpg';
+    const img = 'https://c0.wallpaperflare.com/preview/105/94/569/administration-articles-bank-black-and-white.jpg';
     const setImage = event => {
         event.target.src = img;
     };
@@ -73,27 +69,29 @@ const Main = ({ search }) => {
                 <h3>results: '{search}...'</h3>
             </TitleNews>
             <ContainerNews className="container-news">
-
-                {news && news.map((item, index) => (
+                {news &&
+                    news.map(item => (
                         <Card
                             style={{
                                 width: '18rem'
                             }}
                             className="card-news"
-                            key={index}
+                            key={item.uuid}
                         >
-                            {item.urlToImage !==
+                            {item.image_url !==
                             null ? (
                                 <Card.Img
                                     variant="top"
                                     src={
-                                        item.urlToImage
+                                        item.image_url
                                     }
                                     className="mx-auto d-block"
                                     title={
                                         item.title
                                     }
-                                    alt=""
+                                    alt={
+                                        item.title
+                                    }
                                     onError={
                                         setImage
                                     }
@@ -106,7 +104,9 @@ const Main = ({ search }) => {
                                 <Card.Img
                                     variant="top"
                                     src={img}
-                                    alt=""
+                                    alt={
+                                        item.title
+                                    }
                                     className="img-thumbnail"
                                     title={
                                         item.title
@@ -139,11 +139,7 @@ const Main = ({ search }) => {
                                             '500'
                                     }}
                                 >
-                                    {
-                                        item
-                                            .source
-                                            .name
-                                    }
+                                    {item.source}
                                 </label>
                                 <label
                                     style={{
@@ -153,7 +149,7 @@ const Main = ({ search }) => {
                                     }}
                                 >
                                     {moment(
-                                        item.publishedAt
+                                        item.published_at
                                     )
                                         .add(
                                             24,

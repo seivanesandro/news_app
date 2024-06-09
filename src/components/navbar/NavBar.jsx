@@ -6,12 +6,15 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
+import { SiGeneralmotors } from 'react-icons/si';
 import { IoBusinessOutline } from 'react-icons/io5';
 import { SiRemedyentertainment } from 'react-icons/si';
 import { GiHealthPotion } from 'react-icons/gi';
 import { MdOutlineScience } from 'react-icons/md';
 import { MdOutlineSportsVolleyball } from 'react-icons/md';
 import { GrTechnology } from 'react-icons/gr';
+import { FaUniversity } from 'react-icons/fa';
+
 
 const NavBar = ({ setSearch }) => {
     const isActive = true;
@@ -58,6 +61,30 @@ const NavBar = ({ setSearch }) => {
                             </Offcanvas.Header>
                             <Offcanvas.Body>
                                 <Nav className="justify-content-end flex-grow-1 pe-3">
+                                    <Nav.Link
+                                        to="/#"
+                                        className="d-flex flex-row align-items-sm-start justify-content-start px-3 "
+                                        title="General"
+                                        active={
+                                            isActive
+                                                ? isActive
+                                                : ''
+                                        }
+                                        onClick={() =>
+                                            setSearch(
+                                                'general'
+                                            )
+                                        }
+                                    >
+                                        <SiGeneralmotors
+                                            size="20"
+                                            style={{
+                                                marginRight:
+                                                    '0.5rem'
+                                            }}
+                                        />
+                                        General
+                                    </Nav.Link>
                                     <Nav.Link
                                         to="/#"
                                         className="d-flex flex-row align-items-sm-start justify-content-start px-3 "
@@ -189,7 +216,7 @@ const NavBar = ({ setSearch }) => {
                                         }
                                         onClick={() =>
                                             setSearch(
-                                                'technology'
+                                                'tech'
                                             )
                                         }
                                     >
@@ -201,6 +228,30 @@ const NavBar = ({ setSearch }) => {
                                             }}
                                         />
                                         Technology
+                                    </Nav.Link>
+                                    <Nav.Link
+                                        to="/#"
+                                        className="d-flex flex-row align-items-sm-start justify-content-start px-3 "
+                                        title="Politics"
+                                        active={
+                                            isActive
+                                                ? isActive
+                                                : ''
+                                        }
+                                        onClick={() =>
+                                            setSearch(
+                                                'Politics'
+                                            )
+                                        }
+                                    >
+                                        <FaUniversity
+                                            size="20"
+                                            style={{
+                                                marginRight:
+                                                    '0.5rem'
+                                            }}
+                                        />
+                                        Politics
                                     </Nav.Link>
                                 </Nav>
                             </Offcanvas.Body>
