@@ -74,7 +74,7 @@ const Main = ({ search }) => {
             </TitleNews>
             <ContainerNews className="container-news">
 
-                {news.map((item, index) => (
+                {news && news.map((item, index) => (
                         <Card
                             style={{
                                 width: '18rem'
