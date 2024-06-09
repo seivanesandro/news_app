@@ -7,17 +7,23 @@
 body {
     text-align: center;
 }
-.news {
-    margin: 10px 0;
+
+.card-news:hover {
+    box-shadow: 0 0 0.2rem #c1c1c1;
+}
+
+/* .news {
+    border: 1px solid blue;
 }
 
 .row {
-    margin: 10px 10px;
+border: 1px solid blue;
 }
 
 .card {
-    width: 100%;
-    height: 480px;
+    border: 1px solid blue;
+    width: 40%;
+    height: 100%;
 }
 
 .card img {
@@ -37,3 +43,4 @@ body {
 .news-column {
     padding: 3% 2%;
 }
+ */

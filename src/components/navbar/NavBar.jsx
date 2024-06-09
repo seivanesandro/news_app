@@ -6,7 +6,6 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-import { BsFillHouseFill } from 'react-icons/bs';
 import { IoBusinessOutline } from 'react-icons/io5';
 import { SiRemedyentertainment } from 'react-icons/si';
 import { GiHealthPotion } from 'react-icons/gi';
@@ -59,25 +58,6 @@ const NavBar = ({ setSearch }) => {
                             </Offcanvas.Header>
                             <Offcanvas.Body>
                                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                                    <Nav.Link
-                                        to="/"
-                                        className="d-flex flex-row align-items-sm-start justify-content-start px-3 "
-                                        title="Home"
-                                        active={
-                                            isActive
-                                                ? isActive
-                                                : ''
-                                        }
-                                    >
-                                        <BsFillHouseFill
-                                            size="20"
-                                            style={{
-                                                marginRight:
-                                                    '0.5rem'
-                                            }}
-                                        />
-                                        Home
-                                    </Nav.Link>
                                     <Nav.Link
                                         to="/#"
                                         className="d-flex flex-row align-items-sm-start justify-content-start px-3 "

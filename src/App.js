@@ -4,7 +4,8 @@ import Hero from './components/hero/Hero';
 import Main from './components/main/Main';
 
 const App = () => {
-    const [search, setSearch] = useState('everything');
+    const [search, setSearch] =
+        useState('everything');
     return (
         <div className="App">
             <NavBar setSearch={setSearch} />
