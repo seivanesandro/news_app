@@ -150,12 +150,7 @@ const Main = ({ search }) => {
                                 >
                                     {moment(
                                         item.published_at
-                                    )
-                                        .add(
-                                            24,
-                                            'hours'
-                                        )
-                                        .format(
+                                    ).format(
                                             'LLL'
                                         )}
                                 </label>
