@@ -63,7 +63,7 @@ const NavBar = ({ setSearch }) => {
                                 <Nav className="justify-content-end flex-grow-1 pe-3">
                                     <Nav.Link
                                         to="/#"
-                                        className="d-flex flex-row align-items-sm-start justify-content-start px-3 "
+                                        className="d-flex flex-row align-items-sm-start justify-content-start px-3"
                                         title="General"
                                         active={
                                             isActive
